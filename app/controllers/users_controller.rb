@@ -1,22 +1,54 @@
 class UsersController < ApplicationController
-  def index
-  end
+        #restrict access/ called middle ware
+        before_action :authorize, only: [:show, :destroy, :edit, :update]
+      
+        def index
+          #get all users, rener their names on the users/index view
+         @user = User.all
+         #load all the products on the page
+         @requests = Request.all
+        end
+      
+        def show
+          @request = User.find(params[:id])
+      
+          unless current_user.id == @user.id
+           redirect_to user_path(current_user.id)
+          end
+        end
+      
+        def new
+          @user = User.new
+       
+        end
+      
+        def create
+         @user = User.new(user_params)
+        if @user.save
+        redirect_to new_session_path
+        else
+        redirect_to new_user_path
+        end
+        end
+      
+        def edit
+        end
+      
+        def update
+        end
+      
+        def destroy
+          current_user = destroy
+          seesion[:user_id] = nil
+          #redirect to the sign up page
+          #deleting the cookies
+          redirect_to new_user_path
+        end
+        private
+        def user_params
+         params.require(:user).permit(:name, :email, :password, :password_confirmation, :address)
+        end
+      
+      
+      end
 
-  def show
-  end
-
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-end

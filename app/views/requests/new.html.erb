@@ -1,0 +1,19 @@
+<h1>New Requests</h1>
+
+<%= form_for @request do |r| %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <%= form_for @request do |r| %>  
+      <div class="form-group">
+        <%= f.label :destination, 'destination*' %>
+        <%= f.text_field :destination, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :muscle_with_truck, 'muscle_with_truck*' %>
+        <%= f.text_field :muscle_with_truck, class: 'form-control' %>
+      </div>
+
+      <%= f.submit 'submit request', class: 'btn btn-primary' %>
+<% end %>
+<% end %>
