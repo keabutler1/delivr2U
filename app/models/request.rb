@@ -1,4 +1,4 @@
 class Request < ApplicationRecord
     belongs_to :user
-    belongs_to :muscle
+    # belongs_to :muscle
 end

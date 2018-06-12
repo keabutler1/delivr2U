@@ -5,12 +5,12 @@ class UsersController < ApplicationController
         def index
           #get all users, rener their names on the users/index view
          @user = User.all
-         #load all the products on the page
+         #load all the requests on the page
          @requests = Request.all
         end
       
         def show
-          @request = User.find(params[:id])
+          @user = User.find(params[:id])
       
           unless current_user.id == @user.id
            redirect_to user_path(current_user.id)
