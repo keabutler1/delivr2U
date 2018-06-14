@@ -4,19 +4,18 @@ class RequestsController < ApplicationController
 
   def show
   end
+  def new
+    @request = Request.new
+  end
 
   def create
-  @requests = current_user.request.new(request_params) 
+  @requests = current_user.requests.new(request_params) 
   #attribute it to a user
-    if @request.save
+  if @requests.save
     redirect_to user_path(current_user.id)
     else
       render "new"
     end
-  end
-
-  def new
-    @request = Request.new
   end
 
   def edit
