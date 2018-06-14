@@ -4,7 +4,7 @@ class UsersController < ApplicationController
       
         def index
           #get all users, rener their names on the users/index view
-         @user = User.all
+         @users = User.all
          #load all the requests on the page
          @requests = Request.all
         end

@@ -1,24 +1,32 @@
+<nav>
 <ul class="nav nav-tabs nav-fill">
-  <li class="nav-item">
-     <%= link_to 'Home', root_path, class: 'nav-link' %>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" 
-    href="#" role="button" aria-haspopup="true" aria-expanded="false">Discover</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">About Us</a>
-      <a class="dropdown-item" href="#">Saftey & Trust</a>
-      <a class="dropdown-item" href="#">Insurance</a>
-    </div>
-     <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" 
-    href="#" role="button" aria-haspopup="true" aria-expanded="false">Explore</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Types of Requests</a>
-      <a class="dropdown-item" href="#">B2B</a>
-      <a class="dropdown-item" href="#">Join Us!</a>
-    </div>
-   </li>
+<li class="nav-item">
+<%= link_to 'Home', root_path, class: 'nav-link' %>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Discover</a>
+<div class="dropdown-menu">
+<div>
+<%= link_to "About Us", about_us_path%>
+</div>
+<div>
+<%= link_to "Saftey & Trust", trust_path %>
+</div>
+<div>
+<%= link_to "Insurance", insurance_path%>
+</div>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore</a>
+<div class="dropdown-menu">
+<div>
+<%= link_to "Types of Request", requests_path%>
+</div>
+<div>
+<%= link_to "Biz2Biz", b2b_path %>
+</div>
+<div>
+<%= link_to "Join Us!", join_path%>
+</div>
    <% if logged_in? %>
   <li class="nav-item">
     <a class="nav-link disabled">Logged in as: <%= current_user.name%> </a>
@@ -34,14 +42,16 @@
    <%= link_to 'Sign up ', new_user_path, class: 'nav-link' %>
   <li class="nav-item"></li>
    <%= link_to 'Sign In', new_session_path, class: 'nav-link' %>
+  <li class="nav-item"><li>
+  <%= link_to 'Contact Us', contact_path, class: 'nav-link' %> 
   <% end %>
-   <li class="nav-item">
-    <a class="nav-link active" href="#">Contact Us</a>
    </li> 
-   <div>
- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
- </div>
+  <form class="form-inline mt-2 mt-md-0">
+  <input class="form-control mr-sm-2" type="text" placeholder="Here to help!" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  <%= link_to "", requests_path %>
+  </form>
 </ul>
+</div>
+  </ul>
+</nav>

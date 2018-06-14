@@ -7,11 +7,12 @@ class RequestsController < ApplicationController
 
   def create
   @requests = current_user.request.new(request_params) 
- #attribute it to a user
- if @request.save
-   redirect_to user_path(current_user.id)
-  else
-    render "new"
+  #attribute it to a user
+    if @request.save
+    redirect_to user_path(current_user.id)
+    else
+      render "new"
+    end
   end
 
   def new
@@ -29,8 +30,8 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-   params.require(:request).permit(:destination)
+   params.require(:request).permit(:destination, :description)
   end
  end
- end
+
 

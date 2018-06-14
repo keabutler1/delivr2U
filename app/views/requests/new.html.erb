@@ -1,19 +1,36 @@
-<h1>New Requests</h1>
-
-<%= form_for @request do |r| %>
+<style>
+background {
+  src=""
+}
+</style>
+<h3>New Requests</h3>
 <div class="row">
   <div class="col-md-6 offset-md-3">
-    <%= form_for @request do |r| %>  
-      <div class="form-group">
-        <%= f.label :destination, 'destination*' %>
+  <h4>Submit your request</h4>
+  <hr>
+    <%= form_for @request do |f| %>  
+      <div>
+      <label for="date">Desired date</label>
+      <input type="date" id="date">
+      <label for="time">Example time</label>
+      <input type="time" id="time">
+      </div>
+       <div class="form-group">
+        <%= f.label :destination, 'Destination*' %>
         <%= f.text_field :destination, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :muscle_with_truck, 'muscle_with_truck*' %>
-        <%= f.text_field :muscle_with_truck, class: 'form-control' %>
+        <%= f.label :description, 'Description*' %>
+        <%= f.text_field :description, class: 'form-control' %>
       </div>
-
+      <form>
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Upload an image of the item</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      </form>
       <%= f.submit 'submit request', class: 'btn btn-primary' %>
 <% end %>
-<% end %>
+
+</div>
