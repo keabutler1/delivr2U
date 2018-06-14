@@ -29,8 +29,8 @@ background {
         <label for="exampleFormControlFile1">Upload an image of the item</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1">
       </div>
-      </form>
       <%= f.submit 'submit request', class: 'btn btn-primary' %>
+      <%= link_to 'Submit', new_session_path %>
+      </form>
 <% end %>
-
 </div>

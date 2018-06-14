@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "pages/insurance" => "pages#insurance", as: "insurance"
   get "pages/about_us" => "pages#about_us", as: "about_us"
   get "pages/contact_us" => "pages#contact_us", as: "contact"
+  get "pages/terms" => "pages#terms", as: "terms"
+  
 
 end
 
