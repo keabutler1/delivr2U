@@ -1,11 +1,17 @@
-#"delivr2U Application READme"
+# delivr2U
+
+![](screenshots/home.png)
+![](screenshots/home2.png)
+![](screenshots/home3.png)
+![](screenshots/signup.png)
+![](screenshots/requests.png)
 
 ### Overview
 
 delivr2U is an On-Demand app that allows you to request a mover or muscle with a click of a button!
 ###An introduction to the application
  
- - delivr2U is an on demad delivery app. 
+ - delivr2U is an on demand delivery app. 
       
  - The app intends to solve the problems that customers have with getting a mover/muscle at anytime and with a flat rate.
 
@@ -58,34 +64,34 @@ HTML is the structure of the files used to render the site.
 CSS is the platform used to style the app beautifully!
 
 **Check it out...**
-   - A link to my **tello board and user stories:** 
+ - A link to my **tello board and user stories:** 
     https://trello.com/b/1OA98kgX
     
-- The delivr2U app is deployed on Heroku clheck it out here: **https://guarded-basin-14232.herokuapp.com/** 
+- The delivr2U app is deployed on Heroku: **https://guarded-basin-14232.herokuapp.com/** 
 
-- View more through my **git repository for  app, hosted on GitHub** 
+- View more through my **git repository for the app, hosted on GitHub** 
 https://github.com/keabutler1/delivr2U.git
 ___
 
 ### Explanation
 **2 models were used** 
-those models are the **users and thier requests**. 
+the **users and thier requests**. 
  **A sign up/log in functionality was implemented**, For instance if a user was not logged in they could not make a request for a delivery. When they were logged in they could do everything else except of course signup with the same credentials.
-**Full CRUD** was used for the Requests model. Users are able to Get Post, Patch/Put, and delete their Requests
-I left the  HTML and CSS very sleek and simple so the user's could be quided to the requests.
+**Full CRUD** was used for the Requests model. Users are able to Get, Post, Patch/Put, and delete their Requests.
+I left the  HTML and CSS very sleek and simple so the user experience would be easy going.
 
 ___
 
 ### Backlog
 
-I think I did a good job with coming up with the concept and design. In the future I would like to add links in the footer and and allow the customer to upload images. The major problem I faced with this app was mainly getting the routes accurate. Also, I really enjoyed doing the app I just have to balance a little better because I tend to try to do too much at once.  
+I think I did a good job with coming up with the concept and design. In the future I would like to add links in the footer, allow the customer to upload images, and implement social media links. The major problem I faced with this app was mainly getting the routes accurate. Also, I really enjoyed doing the app I just have to balance a little better because I tend to try to do too much at once.  
 ___
 
 ### Resources
 
 * Uplash
 
-* GA Instructors & classmates
+* My Awesome GA Instructors & classmates
 
 * Stack Overflow
 
