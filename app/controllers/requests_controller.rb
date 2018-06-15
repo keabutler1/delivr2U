@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  before_action :authorize, except: [:index]
   def index
   end
 
@@ -6,6 +7,7 @@ class RequestsController < ApplicationController
   end
   def new
     @request = Request.new
+    
   end
 
   def create
@@ -39,7 +41,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-   params.require(:request).permit(:destination, :description)
+   params.require(:request).permit(:destination, :description, :delivery_date, :delivery_time, :image)
   end
  end
 

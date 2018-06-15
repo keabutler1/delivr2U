@@ -4,11 +4,14 @@
   <h4>Submit your request</h4>
   <hr>
     <%= form_for @request do |f| %>  
-      <div>
-      <label for="date">Desired date</label>
-      <input type="date" id="date">
-      <label for="time">Desired time</label>
-      <input type="time" id="time">
+    <div class="form-group">
+        <%= f.label :delivery_date, 'Delivey Date' %>
+        <%= f.text_field :delivery_date, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :delivery_time, 'Delivery Time*' %>
+        <%= f.text_field :delivery_time, class: 'form-control' %>
       </div>
        <div class="form-group">
         <%= f.label :destination, 'Destination*' %>
@@ -24,7 +27,15 @@
         <label for="exampleFormControlFile1">Upload an image of the item</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1">
       </div>
+      <% if logged_in? %>
       <%= f.submit 'submit request', class: 'btn btn-primary' %>
+
+      <% else %>
+      <button>
+      <%= link_to 'Login', new_session_path %> 
+      </button>
+      <% end %>
+       <div>
       </form>
 <% end %>
 </div>

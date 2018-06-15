@@ -1,8 +1,13 @@
-<h1>Requests#edit</h1>
+<h1>Edit Your Requests</h1>
 
 <%= form_for @request do |f| %>
 <%= f.text_field :destination, placeholder: "Destination" %>
 <br>
 <%= f.text_area :description, placeholder: "description" %>
+<br>
+<%= f.text_area :delivery_date, placeholder: "delivery_date" %>
+<br>
+<%= f.text_area :delivery_time, placeholder: "delivery_time" %>
+
 <%= f.submit %>
 <% end %>
