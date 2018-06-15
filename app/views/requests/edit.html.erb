@@ -1,2 +1,8 @@
 <h1>Requests#edit</h1>
-<p>Find me in app/views/requests/edit.html.erb</p>
+
+<%= form_for @request do |f| %>
+<%= f.text_field :destination, placeholder: "Destination" %>
+<br>
+<%= f.text_area :description, placeholder: "description" %>
+<%= f.submit %>
+<% end %>

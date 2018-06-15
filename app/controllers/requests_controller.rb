@@ -19,12 +19,22 @@ class RequestsController < ApplicationController
   end
 
   def edit
+    @request = Request.find(params[:id])
   end
 
   def update
+    @request = Request.find(params[:id])
+    @request.update(request_params)
+    redirect_to user_path
   end
 
   def destroy
+    # Look up request by params ID (Taken from URL)
+    @request = Request.find(params[:id])
+    # Delete the request
+    @request.destroy
+    # Redirect to user path
+    redirect_to user_path(current_user)
   end
 
   private

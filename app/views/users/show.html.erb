@@ -7,11 +7,11 @@ h5 {
   color: black;
 }
   body {
-   background-image: url("https://images.unsplash.com/photo-1503891450247-ee5f8ec46dc3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e912716737abfa4ec2d2dca0788f5fe7&auto=format&fit=crop&w=500&q=60");
+   background-image: url("https://images.unsplash.com/photo-1528324100-d0c311a3da67?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c70fb1f5990feea0c8ad474a092b0e6b&auto=format&fit=crop&w=754&q=80");
 }
 </style>
 <body>
-
+ <a href="https://imgur.com/7iLNYZ0"><img src="https://i.imgur.com/7iLNYZ0t.jpg" title="source: imgur.com" /></a>
 <div class="card border-success mb-4" style="max-width: 25rem;">
   <div class="card-header"><h3>Profile</h3></div>
   <div class="card-body text-success">
@@ -22,12 +22,14 @@ h5 {
     <div class="card border-sucess row-sm-6 request-list">
     <div class="card-header"><h5>Requests</h5>
     <% @user.requests.each do |r| %>
-    <div class="Request"><%= link_to "#{r.destination}", request_path(r) %></div>
+    <div class="Request">
+    <button>
+      <p><%= link_to "#{r.description}", request_path(r) %> | <%= r.destination %></p>
+      <p> <%= link_to("edit", edit_request_path(r)) %> | <%= link_to("delete", request_path(r), method: "DELETE") %></p>
+   </button>
+    </div>
     <% end %>
-    <% @user.requests.each do |r| %>
-    <div class="Request"><%= link_to "#{r.description}", request_path(r) %></div>
-    <% end %>
-    <%= link_to("New", requests_path(@request)) %>
+    <%= link_to("New", requests_path) %>
   </div>
    </div>
 <body>
